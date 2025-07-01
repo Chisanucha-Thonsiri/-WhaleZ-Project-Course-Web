@@ -8,7 +8,8 @@ function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,de
     }
     const loginUser = JSON.parse(localStorage.getItem('user'));
     const loginID = loginUser.user.id;
-   if(loginID === owner){
+    const loginRole = loginUser.user.role;
+   if(loginID === owner || loginRole === 'Course Admin'){
      return(
         <div className='Post'>
             <div className='profileHeader'>
