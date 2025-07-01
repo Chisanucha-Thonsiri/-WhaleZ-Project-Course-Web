@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Roletag from '../components/Roletag'
 
 function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,deletePost}){
     function onClick(){
@@ -15,7 +16,7 @@ function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,de
             <img className='Post__profilePic'
             src = {`${pfpic}`}/>
             <div className='vertical-container'>
-            <div className='profileName'>{fname} {lname} <div className='roleTag'> <i class="fa-solid fa-user-group fa-sm" style={{color: '#ffffff'}}></i> {role}</div></div>
+            <div className='profileName'>{fname} {lname} <Roletag role={role}/></div>
             <div className='postDate'> <i class="fa-solid fa-calendar-days fa-sm" style={{color:  '#4e4e4e'}}></i> {date} <i class="fa-solid fa-clock fa-sm" style={{color:  '#4e4e4e'}}></i> {time}</div>
             </div>
             </div>
@@ -39,7 +40,7 @@ function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,de
             <img className='Post__profilePic'
             src = {`${pfpic}`}/>
             <div className='vertical-container'>
-            <div className='profileName'>{fname} {lname} <div className='roleTag'> <i class="fa-solid fa-user-group fa-sm" style={{color: '#ffffff'}}></i> {role}</div></div>
+            <div className='profileName'>{fname} {lname} <Roletag role={role}/></div>
             <div className='postDate'> <i class="fa-solid fa-calendar-days fa-sm" style={{color:  '#4e4e4e'}}></i> {date} <i class="fa-solid fa-clock fa-sm" style={{color:  '#4e4e4e'}}></i> {time}</div>
             </div>
             </div>
