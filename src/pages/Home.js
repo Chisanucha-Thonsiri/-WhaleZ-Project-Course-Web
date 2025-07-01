@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react';
-import './Home.css';
-import Navbar from './Navbar';
-import Input from './Input';
-import Post from './Post';
-import Menubar from './Menubar';
-import { supabase } from './supabase'
+import '../css/Home.css';
+import Navbar from '../components/Navbar';
+import Input from '../components/Input';
+import Post from '../components/Post';
+import Menubar from '../components/Menubar';
+import { supabase } from '../utils/supabase'
 
 let id = 1;
 function Home() {

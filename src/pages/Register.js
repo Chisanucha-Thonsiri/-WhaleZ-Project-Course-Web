@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Register.css'
-import { supabase } from './supabase'
+import '../css/Register.css'
+import { supabase } from '../utils/supabase'
 
 function Register() {
   const navigate = useNavigate(); 
