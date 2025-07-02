@@ -45,10 +45,11 @@ id += 1 ;
       <div className="horizontal-container">
     <Menubar />
     <div className="vertical-container">
+      <div className="vertical-scroll">
     <Input addPost={addPost} />
     {posts.map((post) => (<Post key={post.id} id = {post.id} title = {post.title} info = {post.info} date= {post.date} time = {post.time} 
     fname={post.userdata?.fname} lname={post.userdata?.lname} pfpic={post.userdata?.profilepic} role={post.userdata?.role} owner={post.userdata?.id} deletePost={deletePost}/>))}
-    </div>
+    </div></div>
     
   </div>
       </div>
