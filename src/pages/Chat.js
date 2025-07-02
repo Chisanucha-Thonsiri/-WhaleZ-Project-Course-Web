@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import '../css/Home.css';
+import '../css/Chat.css';
 import Navbar from '../components/Navbar';
 import Input from '../components/Input';
 import Post from '../components/Post';
@@ -7,7 +7,7 @@ import Menubar from '../components/Menubar';
 import { supabase } from '../utils/supabase'
 
 let id = 1;
-function Home() {
+function Chat() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     loadAllPost();
@@ -43,7 +43,7 @@ id += 1 ;
       <Navbar user={user} />
       <div className='content'>
       <div className="horizontal-container">
-    <Menubar page='post' />
+    <Menubar page = 'chat'/>
     <div className="vertical-container">
       <div className="vertical-scroll">
     <Input addPost={addPost} />
@@ -57,4 +57,4 @@ id += 1 ;
   );
 }
 
-export default Home;
+export default Chat;
