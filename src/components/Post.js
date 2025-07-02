@@ -16,7 +16,7 @@ function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,de
             <div className='profileSection'>
             <img className='Post__profilePic'
             src = {`${pfpic}`}/>
-            <div className='vertical-container'>
+            <div className='vertical-container-post'>
             <div className='profileName'>{fname} {lname} <Roletag role={role}/></div>
             <div className='postDate'> <i class="fa-solid fa-calendar-days fa-sm" style={{color:  '#4e4e4e'}}></i> {date} <i class="fa-solid fa-clock fa-sm" style={{color:  '#4e4e4e'}}></i> {time}</div>
             </div>
@@ -40,7 +40,7 @@ function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,de
             <div className='profileSection'>
             <img className='Post__profilePic'
             src = {`${pfpic}`}/>
-            <div className='vertical-container'>
+            <div className='vertical-container-post'>
             <div className='profileName'>{fname} {lname} <Roletag role={role}/></div>
             <div className='postDate'> <i class="fa-solid fa-calendar-days fa-sm" style={{color:  '#4e4e4e'}}></i> {date} <i class="fa-solid fa-clock fa-sm" style={{color:  '#4e4e4e'}}></i> {time}</div>
             </div>
