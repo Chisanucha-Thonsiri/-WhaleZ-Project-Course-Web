@@ -6,8 +6,10 @@ import Post from '../components/Post';
 import Menubar from '../components/Menubar';
 import { supabase } from '../utils/supabase'
 import Roletag from '../components/Roletag';
+import Message from '../components/Message'
 
 let id = 1;
+const temppfp = 'https://64.media.tumblr.com/619deb1f33f44aac14e246124cc42d07/tumblr_nxzmw3mRaH1tprvgxo5_540.pnj';
 function Chat() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -48,48 +50,10 @@ id += 1 ;
     <div className="Chatroom">
     <div className='ChatroomHeader'>ห้องแชท</div>
       <div className="Chat-scroll">
-        <div className='MessageContainer'>
-            <div className='MessageProfileSection'>
-            <img className='MessageProfilePic' src='https://64.media.tumblr.com/619deb1f33f44aac14e246124cc42d07/tumblr_nxzmw3mRaH1tprvgxo5_540.pnj'/>
-        <div className='MessageProfileName'>Chisanucha
-        <Roletag role='Course Admin'/></div>
-        </div>
-        <div className='MessageArea'>
-        <div className='MessageBubble'>sfeuddsjdicjweisdfhwjesfjwos9hiresdnojseifdcscnkwesfceinfusejsfeuddsjdicjweisdfhwjesfjwos9hiresdnojseifdcscnkwesfceinfusej</div>
-        <div className='MessageTimestamp'>14.03</div>
-        </div>
-        
-        </div>
-        <div className='MessageContainer'>
-            <div className='MyMessageProfileSection'>
-                <div className='MessageProfileName'><Roletag role='Course Admin'/>Chisanucha Thonsiri
-        </div>
-            <img className='MessageProfilePic' src='https://64.media.tumblr.com/619deb1f33f44aac14e246124cc42d07/tumblr_nxzmw3mRaH1tprvgxo5_540.pnj'/>
-        </div>
-        <div className='MyMessageArea'>
-        <div className='MessageTimestamp'>14.03</div>
-        <div className='MyMessageBubble'>Hi</div>
-
-        </div>
-        
-        </div>
-
-        <div className='MessageContainer MessageNotice'>
-            <div className='MessageCancelled'>ข้อความถูกยกเลิกแล้ว</div>
-        </div>
-
-        <div className='MessageContainer'>
-            <div className='MessageProfileSection'>
-            <img className='MessageProfilePic' src='https://64.media.tumblr.com/619deb1f33f44aac14e246124cc42d07/tumblr_nxzmw3mRaH1tprvgxo5_540.pnj'/>
-        <div className='MessageProfileName'>Chisanucha
-        <Roletag role='Course Admin'/></div>
-        </div>
-        <div className='MessageArea'>
-        <div className='MessageBubble'>sfeuddsjdicjweisdfhwjesfjwos9hiresdnojseifdcscnkwesfceinfusejsfeuddsjdicjweisdfhwjesfjwos9hiresdnojseifdcscnkwesfceinfusej</div>
-        <div className='MessageTimestamp'>14.03</div>
-        </div>
-        
-        </div>
+       <Message id={1} fname = 'Chisanucha' lname = 'Thonsiri' role= 'Course Admin' pfpic = {temppfp} senderId ={1} message='hi'date='6 jul'time='1:43'status={1}/>
+       <Message id={2} fname = 'Chisanucha' lname = 'Test' role= 'Course Admin' pfpic = {temppfp} senderId ={14} message='hi'date='6 jul'time='1:43'status={1}/>
+<Message id={3} fname = 'Chisanucha' lname = 'Thonsiri' role= 'Course Admin' pfpic = {temppfp} senderId ={1} message='hi'date='6 jul'time='1:43'status={0}/>
+  
 
         
     {/*{posts.map((post) => (<Post key={post.id} id = {post.id} title = {post.title} info = {post.info} date= {post.date} time = {post.time} 
