@@ -41,10 +41,6 @@ id += 1 ;
   const {data,error} = await supabase.from('messagedata').update({status:'0'}).eq('id',id);
   await loadAllMessage();
   }
-  {/*DELETE MESSAGE TEMPLATE: async function deletePost(id){
-  const {data,error} = await supabase.from('post').delete().eq('id',id);
-  await loadAllPost();
-  } */}
   const user = JSON.parse(localStorage.getItem('user'));
   return (
     <div className="Home">
@@ -59,13 +55,16 @@ id += 1 ;
         lname = {message.userdata?.lname} role={message.userdata?.role} pfpic={message.userdata?.profilepic} senderId = {message.userdata?.id} deleteMessage={deleteMessage}/>))}
   
 
-        
-    {/*{posts.map((post) => (<Post key={post.id} id = {post.id} title = {post.title} info = {post.info} date= {post.date} time = {post.time} 
-    fname={post.userdata?.fname} lname={post.userdata?.lname} pfpic={post.userdata?.profilepic} role={post.userdata?.role} owner={post.userdata?.id} deletePost={deletePost}/>))}*/}
     </div><ChatInput addMessage={addMessage} /></div>
     
   </div>
       </div>
+     <div className='load-container'>
+    <div className='spinner-container'>
+      <i className="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
+      <span>กำลังโหลด...</span>
+    </div>
+  </div>
     </div>
   );
 }
