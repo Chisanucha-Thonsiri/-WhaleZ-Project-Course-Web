@@ -1,28 +1,24 @@
 import React,{useState} from 'react';
 import PropTypes, { element } from 'prop-types';
 
-function ChatInput({addPost}){
+function ChatInput({addMessage}){
 const [Input, setInput] = useState('');
-const [InputINF, setInputINF] = useState('');
 
 function onChange(event){
 setInput(event.target.value);
 }
 
-function onChangeINF(event){
-setInputINF(event.target.value);
-}
 
 function onClick(){
     const user = JSON.parse(localStorage.getItem('user'));
     const owner = user.user.id;
-       if(Input && InputINF){
+    const status = 1;
+       if(Input){
         const now = new Date();
         const date = now.toLocaleDateString();
         const time = now.toLocaleTimeString();
-        addPost(Input,InputINF,date,time,owner);
+        addMessage(Input,date,time,status,owner);
         setInput('');
-        setInputINF('');
     }
 }
 return (
@@ -40,7 +36,7 @@ placeholder='ข้อความ'/></div>
 }
 
 ChatInput.propTypes = {
-    addPost : PropTypes.func.isRequired
+    addMessage : PropTypes.func.isRequired
 };
 
 export default ChatInput;

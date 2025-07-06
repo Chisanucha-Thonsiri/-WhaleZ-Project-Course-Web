@@ -11,12 +11,12 @@ import Message from '../components/Message'
 let id = 1;
 const temppfp = 'https://64.media.tumblr.com/619deb1f33f44aac14e246124cc42d07/tumblr_nxzmw3mRaH1tprvgxo5_540.pnj';
 function Chat() {
-  const [posts, setPosts] = useState([]);
+  const [messages, setMessages] = useState([]);
   useEffect(() => {
-    loadAllPost();
+    loadAllMessage();
   }, []);
-  async function loadAllPost(){
-    const {data,error} = await supabase.from('post')
+  async function loadAllMessage(){
+    const {data,error} = await supabase.from('messagedata')
   .select(`
     *,
     userdata (
@@ -26,20 +26,22 @@ function Chat() {
      if (error) {
       console.error('Load error:', error);
     } else {
-      setPosts(data);
+      setMessages(data);
     }
   }
+
+
   
-  async function addPost(title,info,date,time,owner){
-  const {data,error} = await supabase.from('post')
-  .insert([{owner,title,info,date,time}]);
-  await loadAllPost();
+  async function addMessage(message,date,time,status,senderID){
+  const {data,error} = await supabase.from('messagedata')
+  .insert([{message,date,time,status,senderID}]);
+  await loadAllMessage();
 id += 1 ;
   }
-  async function deletePost(id){
+  {/*DELETE MESSAGE TEMPLATE: async function deletePost(id){
   const {data,error} = await supabase.from('post').delete().eq('id',id);
   await loadAllPost();
-  }
+  } */}
   const user = JSON.parse(localStorage.getItem('user'));
   return (
     <div className="Home">
@@ -50,15 +52,14 @@ id += 1 ;
     <div className="Chatroom">
     <div className='ChatroomHeader'>ห้องแชท</div>
       <div className="Chat-scroll">
-       <Message id={1} fname = 'Chisanucha' lname = 'Thonsiri' role= 'Course Admin' pfpic = {temppfp} senderId ={1} message='hi'date='6 jul'time='1:43'status={1}/>
-       <Message id={2} fname = 'Chisanucha' lname = 'Test' role= 'Course Admin' pfpic = {temppfp} senderId ={14} message='hi'date='6 jul'time='1:43'status={1}/>
-<Message id={3} fname = 'Chisanucha' lname = 'Thonsiri' role= 'Course Admin' pfpic = {temppfp} senderId ={1} message='hi'date='6 jul'time='1:43'status={0}/>
+        {messages.map((message) => (<Message key={message.id} id={message.id} message={message.message} date={message.date} time={message.time} status={message.status} fname={message.userdata?.fname}
+        lname = {message.userdata?.lname} role={message.userdata?.role} pfpic={message.userdata?.profilepic} senderId = {message.userdata?.id}/>))}
   
 
         
     {/*{posts.map((post) => (<Post key={post.id} id = {post.id} title = {post.title} info = {post.info} date= {post.date} time = {post.time} 
     fname={post.userdata?.fname} lname={post.userdata?.lname} pfpic={post.userdata?.profilepic} role={post.userdata?.role} owner={post.userdata?.id} deletePost={deletePost}/>))}*/}
-    </div><ChatInput addPost={addPost} /></div>
+    </div><ChatInput addMessage={addMessage} /></div>
     
   </div>
       </div>
