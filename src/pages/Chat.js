@@ -11,10 +11,12 @@ import Message from '../components/Message'
 let id = 1;
 function Chat() {
   const [messages, setMessages] = useState([]);
+  const [isLoading, setLoadingBool] = useState(false);
   useEffect(() => {
     loadAllMessage();
   }, []);
   async function loadAllMessage(){
+    setLoadingBool(true);
     const {data,error} = await supabase.from('messagedata')
   .select(`
     *,
@@ -27,6 +29,7 @@ function Chat() {
     } else {
       setMessages(data);
     }
+    setLoadingBool(false);
   }
 
 
@@ -59,12 +62,14 @@ id += 1 ;
     
   </div>
       </div>
-     <div className='load-container'>
+    {isLoading &&(
+         <div className='load-container'>
     <div className='spinner-container'>
       <i className="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
       <span>กำลังโหลด...</span>
     </div>
   </div>
+    )}
     </div>
   );
 }
