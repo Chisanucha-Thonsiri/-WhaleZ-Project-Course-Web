@@ -19,7 +19,7 @@ if(!status){
             <img className='MessageProfilePic' src={`${pfpic}`}/>
         </div>
         <div className='MyMessageArea'>
-        <div className='MessageTimestamp'>{time}</div>
+        <div className='MessageTimestamp'><i class="fa-solid fa-trash" style={{color:'#757575'}}></i> {time}</div>
         <div className='MyMessageBubble'>{message}</div>
 
         </div>
