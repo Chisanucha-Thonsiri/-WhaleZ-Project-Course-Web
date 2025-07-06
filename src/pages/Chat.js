@@ -9,7 +9,6 @@ import Roletag from '../components/Roletag';
 import Message from '../components/Message'
 
 let id = 1;
-const temppfp = 'https://64.media.tumblr.com/619deb1f33f44aac14e246124cc42d07/tumblr_nxzmw3mRaH1tprvgxo5_540.pnj';
 function Chat() {
   const [messages, setMessages] = useState([]);
   useEffect(() => {
@@ -22,7 +21,7 @@ function Chat() {
     userdata (
       id,fname,lname,role,profilepic
     )
-  `)
+  `).order('id',{addMessage:true})
      if (error) {
       console.error('Load error:', error);
     } else {
@@ -37,6 +36,10 @@ function Chat() {
   .insert([{message,date,time,status,senderID}]);
   await loadAllMessage();
 id += 1 ;
+  }
+  async function deleteMessage(id){
+  const {data,error} = await supabase.from('messagedata').update({status:'0'}).eq('id',id);
+  await loadAllMessage();
   }
   {/*DELETE MESSAGE TEMPLATE: async function deletePost(id){
   const {data,error} = await supabase.from('post').delete().eq('id',id);
@@ -53,7 +56,7 @@ id += 1 ;
     <div className='ChatroomHeader'>ห้องแชท</div>
       <div className="Chat-scroll">
         {messages.map((message) => (<Message key={message.id} id={message.id} message={message.message} date={message.date} time={message.time} status={message.status} fname={message.userdata?.fname}
-        lname = {message.userdata?.lname} role={message.userdata?.role} pfpic={message.userdata?.profilepic} senderId = {message.userdata?.id}/>))}
+        lname = {message.userdata?.lname} role={message.userdata?.role} pfpic={message.userdata?.profilepic} senderId = {message.userdata?.id} deleteMessage={deleteMessage}/>))}
   
 
         

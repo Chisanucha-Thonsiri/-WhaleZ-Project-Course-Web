@@ -1,15 +1,21 @@
 import React from "react";
 import Roletag  from "./Roletag";
-function Message({id,fname,lname,role,pfpic,senderId,message,date,time,status}){
+function Message({id,fname,lname,role,pfpic,senderId,message,date,time,status,deleteMessage}){
 const loginUser = JSON.parse(localStorage.getItem('user'));
 const loginID = loginUser.user.id;
-console.log(lname)
-console.log(loginID)
-console.log(senderId)
+function onClick(){
+    deleteMessage(id);
+}
 if(!status){
-    return <div className='MessageContainer MessageNotice'>
-            <div className='MessageCancelled'>ยกเลิกข้อความแล้ว</div>
+    if(senderId === loginID){
+           return <div className='MessageContainer MessageNotice'>
+            <div className='MessageCancelled'>คุณยกเลิกข้อความแล้ว</div>
         </div>
+    }else{
+           return <div className='MessageContainer MessageNotice'>
+            <div className='MessageCancelled'>{fname} {lname} ยกเลิกข้อความแล้ว</div>
+        </div>
+    }
 }else{
     if (senderId === loginID){
     return  <div className='MessageContainer'>
@@ -19,7 +25,7 @@ if(!status){
             <img className='MessageProfilePic' src={`${pfpic}`}/>
         </div>
         <div className='MyMessageArea'>
-        <div className='MessageTimestamp'><i class="fa-solid fa-trash" style={{color:'#757575'}}></i> {time}</div>
+        <div className='MessageTimestamp'><i class="fa-solid fa-trash" style={{color:'#757575'}} onClick={onClick}></i> {time}</div>
         <div className='MyMessageBubble'>{message}</div>
 
         </div>
