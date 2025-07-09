@@ -5,14 +5,17 @@ import Input from '../components/Input';
 import Post from '../components/Post';
 import Menubar from '../components/Menubar';
 import { supabase } from '../utils/supabase'
+import LoadSpinner from '../components/LoadSpinner';
 
 let id = 1;
 function Home() {
   const [posts, setPosts] = useState([]);
+  const[isLoading, isLoadingBool] = useState(false);
   useEffect(() => {
     loadAllPost();
   }, []);
   async function loadAllPost(){
+    isLoadingBool(true);
     const {data,error} = await supabase.from('post')
   .select(`
     *,
@@ -25,6 +28,7 @@ function Home() {
     } else {
       setPosts(data);
     }
+    isLoadingBool(false);
   }
   
   async function addPost(title,info,date,time,owner){
@@ -53,6 +57,8 @@ id += 1 ;
     
   </div>
       </div>
+      {isLoading && <LoadSpinner/>}
+      
     </div>
   );
 }
