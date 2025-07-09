@@ -7,6 +7,7 @@ import Menubar from '../components/Menubar';
 import { supabase } from '../utils/supabase'
 import Roletag from '../components/Roletag';
 import Message from '../components/Message'
+import LoadSpinner from '../components/LoadSpinner';
 
 let id = 1;
 function Chat() {
@@ -63,12 +64,7 @@ id += 1 ;
   </div>
       </div>
     {isLoading &&(
-         <div className='load-container'>
-    <div className='spinner-container'>
-      <i className="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
-      <span>กำลังโหลด...</span>
-    </div>
-  </div>
+         <LoadSpinner/>
     )}
     </div>
   );
