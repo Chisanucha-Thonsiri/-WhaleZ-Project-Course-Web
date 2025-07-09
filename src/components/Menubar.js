@@ -14,7 +14,7 @@ function Menubar({page}){
     }
     if(page === 'post'){
         return <div className='Menubar'>
-    <div className='Menu Selected' ><i class="fa-solid fa-message"></i> โพสต์</div>
+    <div className='Menu Selected' ><i class="fa-solid fa-sign-hanging"></i> โพสต์</div>
     <div className='Menu Unselected' onClick={() => changePage('chat')}><i class="fa-solid fa-message"></i> ห้องแชท</div>
     <div className='Menu Unselected'><i class="fa-solid fa-file"> </i> เอกสารการเรียน</div>
     <div className='Menu Unselected'><i class="fa-solid fa-film"> </i> คลิป</div>
@@ -23,7 +23,7 @@ function Menubar({page}){
     </div>
     }else if(page === 'chat'){
         return <div className='Menubar'>
-    <div className='Menu Unselected' onClick={() => changePage('post')}><i class="fa-solid fa-message"></i> โพสต์</div>
+    <div className='Menu Unselected' onClick={() => changePage('post')}><i class="fa-solid fa-sign-hanging"></i> โพสต์</div>
     <div className='Menu Selected'><i class="fa-solid fa-message"></i> ห้องแชท</div>
     <div className='Menu Unselected'><i class="fa-solid fa-file"> </i> เอกสารการเรียน</div>
     <div className='Menu Unselected'><i class="fa-solid fa-film"> </i> คลิป</div>
