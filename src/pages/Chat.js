@@ -11,6 +11,7 @@ import LoadSpinner from '../components/LoadSpinner';
 
 let id = 1;
 function Chat() {
+  let lastDate = null;
   const [messages, setMessages] = useState([]);
   const [isLoading, setLoadingBool] = useState(false);
   useEffect(() => {
@@ -55,8 +56,8 @@ id += 1 ;
     <div className="Chatroom">
     <div className='ChatroomHeader'>ห้องแชท</div>
       <div className="Chat-scroll">
-        {messages.map((message) => (<Message key={message.id} id={message.id} message={message.message} date={message.date} time={message.time} status={message.status} fname={message.userdata?.fname}
-        lname = {message.userdata?.lname} role={message.userdata?.role} pfpic={message.userdata?.profilepic} senderId = {message.userdata?.id} deleteMessage={deleteMessage}/>))}
+        {messages.map((message) => {const showDate = message.date != lastDate;  lastDate = message.date; return (<Message key={message.id} id={message.id} message={message.message} date={message.date} time={message.time} status={message.status} fname={message.userdata?.fname}
+        lname = {message.userdata?.lname} role={message.userdata?.role} pfpic={message.userdata?.profilepic} senderId = {message.userdata?.id} deleteMessage={deleteMessage} showDate={showDate}/>)})}
   
 
     </div><ChatInput addMessage={addMessage} /></div>

@@ -60,6 +60,14 @@ padding-top: 0px;
     color: white;
     border-radius: 10px;
 }
+.DateBanner{
+    background-color: #4e4e4e88;
+    display: inline-flex;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    gap:2px;
+}
 .MessageProfilePic{
   width: 30px;
   height: 30px;
