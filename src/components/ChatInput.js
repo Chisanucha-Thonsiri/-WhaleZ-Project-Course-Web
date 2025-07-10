@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import PropTypes, { element } from 'prop-types';
+import getDate from '../utils/getDate'
 
 function ChatInput({addMessage}){
 const [Input, setInput] = useState('');
@@ -14,9 +15,9 @@ function onClick(){
     const owner = user.user.id;
     const status = 1;
        if(Input){
-        const now = new Date();
-        const date = now.toLocaleDateString();
-        const time = now.toLocaleTimeString();
+        const dateData = getDate();
+        const date = dateData.date;
+        const time = dateData.time;
         addMessage(Input,date,time,status,owner);
         setInput('');
     }

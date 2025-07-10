@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import PropTypes, { element } from 'prop-types';
+import getDate from '../utils/getDate';
 
 function Input({addPost}){
 const [Input, setInput] = useState('');
@@ -17,9 +18,9 @@ function onClick(){
     const user = JSON.parse(localStorage.getItem('user'));
     const owner = user.user.id;
        if(Input && InputINF){
-        const now = new Date();
-        const date = now.toLocaleDateString();
-        const time = now.toLocaleTimeString();
+        const dateData = getDate();
+        const date = dateData.date;
+        const time = dateData.time;
         addPost(Input,InputINF,date,time,owner);
         setInput('');
         setInputINF('');
