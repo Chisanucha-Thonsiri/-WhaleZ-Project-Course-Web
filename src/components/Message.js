@@ -1,11 +1,15 @@
 import React from "react";
 import Roletag  from "./Roletag";
+import isToday from "../utils/isToday";
 function Message({id,fname,lname,role,pfpic,senderId,message,date,time,status,deleteMessage,showDate}){
 const loginUser = JSON.parse(localStorage.getItem('user'));
 const loginID = loginUser.user.id;
 const currentLoadingDate = localStorage.getItem('currentLoadingDate');
 function onClick(){
     deleteMessage(id);
+}
+if(isToday(date)){
+   date = 'วันนี้';
 }
 if(showDate){
     if(!status){
