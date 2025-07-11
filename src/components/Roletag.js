@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../css/component-css/Roletag.css'
 function Roletag({role}){
     if(role === 'Student'){
         return <div className='roleTag roleStu'> <i class="fa-solid fa-user-group fa-sm" style={{color: '#ffffff'}}></i> {role}</div>

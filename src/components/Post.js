@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Roletag from '../components/Roletag'
+import '../css/component-css/Post.css'
 
 function Post({id , title,info, date, time, fname ,lname , pfpic, role, owner,deletePost}){
     function onClick(){

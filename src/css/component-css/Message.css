@@ -1,0 +1,95 @@
+.MessageContainer{
+    padding: 10px 5px;
+}
+.MessageNotice{
+    display: flex;
+    justify-content: center;
+}
+.MessageCancelled{
+    background-color: #4e4e4e88;
+    display: inline-block;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+}
+.DateBanner{
+    background-color: #4e4e4e88;
+    display: inline-flex;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    gap:2px;
+}
+.MessageProfilePic{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;   
+  object-position: center;
+  border-radius: 60px;
+}
+
+.MessageProfileSection{
+    display: flex;
+    gap: 2px;
+}
+
+.MyMessageProfileSection{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.MessageProfileName{
+    columns: rgb(0, 0, 0);
+     display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 2px 2px 0 8px;
+  font-size: large;
+  font-weight: bold;
+}
+
+
+.MessageArea{
+ padding-left: 40px;
+ display: flex;
+ gap: 5px;
+}
+
+.MyMessageArea{
+ padding-right: 35px;
+ display: flex;
+ justify-content: flex-end;
+ gap: 5px;
+}
+.MessageBubble{
+ display: inline-block;
+ font-size: medium;
+ background-color: #dadada;
+ max-width: 300px;
+ min-width: 0px;
+ padding: 4px 6px;
+ word-wrap: break-word;
+ border-radius: 0 10px 10px 10px;
+}
+
+.MyMessageBubble{
+ display: inline-block;
+ font-size: medium;
+ background-color: #4ceaff;
+ max-width: 300px;
+ min-width: 0px;
+ padding: 4px 6px;
+ word-wrap: break-word;
+ border-radius: 10px 0px 10px 10px;
+}
+.MessageTimestamp{
+    display: flex;
+    align-items: flex-end;
+    font-size: small;
+    gap: 5px ;
+}
+
+.deleteButton{
+  margin-top: 10px;
+}

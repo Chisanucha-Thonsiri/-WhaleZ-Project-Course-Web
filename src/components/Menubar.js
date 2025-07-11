@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../css/component-css/Menubar.css'
 
 function Menubar({page}){
     const Navigate = useNavigate();

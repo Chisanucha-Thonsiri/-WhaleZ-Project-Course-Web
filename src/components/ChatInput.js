@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import PropTypes, { element } from 'prop-types';
 import getDate from '../utils/getDate'
+import '../css/component-css/ChatInput.css'
+
 
 function ChatInput({addMessage}){
 const [Input, setInput] = useState('');

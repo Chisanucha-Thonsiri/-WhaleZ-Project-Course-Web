@@ -1,0 +1,67 @@
+.Input{
+  border: 1px solid hsl(216, 8% , 88%); 
+  width:576px;
+  margin:10px auto;
+  background-color: #ffffff;
+}
+
+.Input{
+border-radius: 4px;
+}
+
+.Input__header{
+  background-color: #f5f6f7;
+  border-bottom:1px solid #dddfe2;
+  border-radius:10px 10px 0 0;
+  margin: 0;
+  padding: 15px ;
+}
+
+.Title__header{
+  padding-top: 15px;
+  height: 40px;
+  font-size: medium;
+  font-weight: 500;
+  margin-left: 15px; 
+}
+
+.horizontal-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px; 
+        
+  border-bottom: 1px solid #dddfe263;
+}
+
+.Input__field{
+width: 85%;
+height:40px;
+padding-top: 12px;
+font-size: medium;
+background-color: #ffffff00;
+border-radius: 10px;
+border:1px solid rgba(80, 80, 80, 0);
+}
+.Input__fieldINF{
+font-size: small;
+width:100%;
+height:100px;
+padding: 15px;
+background-color: #ffffff;
+border:none;
+}
+.Input__field:focus{
+  outline: none;
+}
+.Input__button{
+border: none;
+border-radius: 4px;
+background-color: blue;
+color: beige;
+}
+
+.Input__buttonField{
+  padding: 10px;
+display: flex;
+justify-content: flex-end;
+}

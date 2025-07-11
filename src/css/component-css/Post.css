@@ -1,0 +1,93 @@
+.profileHeader{
+  display:flex;
+  justify-content: space-between;
+  background:linear-gradient(rgb(211, 255, 255), #bec3ff);
+  margin: -15px;      
+  padding: 10px 15px 10px 15px;  
+  border-bottom:1px solid #dddfe2;
+  border-radius:2px 2px 0 0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0px -2px 2px rgb(204, 204, 204);
+}
+
+.profileSection{
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin: -15px;      
+  padding: 10px 15px 10px 15px;  
+}
+
+.postSection{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;  
+
+}
+
+.Post__profilePic{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;   
+  object-position: center;
+  border-radius: 60px;
+}
+
+.vertical-container-post {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+}
+
+.profileName{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 2px 2px 0 8px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.postDate{
+  padding: 0 0 0 8px;
+  font-size: small;
+  color: #4e4e4e;
+}
+
+.deleteButton{
+  margin-top: 10px;
+}
+
+.Post__title{
+  font-size: x-large;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.Post__info{
+  font-size: medium;
+  padding-left: 10px;
+  white-space: pre-line;
+}
+
+.Post__image{
+  width: 100%;
+  margin-top: 0px;
+}
+
+.Post{
+  border: 1px solid hsl(216, 8% , 88%); 
+  width:576px;
+  margin:10px auto;
+  background-color: #ffffff;
+}
+.Post{
+  border-radius: 20px;
+}
+
+.Post{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 25px;
+}

@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import PropTypes, { element } from 'prop-types';
 import getDate from '../utils/getDate';
+import '../css/component-css/Input.css'
 
 function Input({addPost}){
 const [Input, setInput] = useState('');

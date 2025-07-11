@@ -1,6 +1,8 @@
 import React from "react";
 import Roletag  from "./Roletag";
 import isToday from "../utils/isToday";
+import '../css/component-css/Message.css'
+
 function Message({id,fname,lname,role,pfpic,senderId,message,date,time,status,deleteMessage,showDate}){
 const loginUser = JSON.parse(localStorage.getItem('user'));
 const loginID = loginUser.user.id;
@@ -76,7 +78,6 @@ if(showDate){
     }
 }else{
     if (senderId === loginID){
-        console.log('This One');
     return  <div className='MessageContainer'>
             <div className='MyMessageProfileSection'>
                 <div className='MessageProfileName'><Roletag role={`${role}`}/>{fname} {lname}

@@ -1,0 +1,44 @@
+.Navbar{
+  color:#ffffff;
+  padding: 10px 20px 10px 20px;
+  background: #4167b2;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.webName{
+  font-size: large;
+}
+
+.login-name{
+padding-top: 0px;
+}
+
+.login-Profile{
+  font-size: large;
+  display: flex;
+  gap: 5px;
+  
+}
+
+.logout-icon {
+  color: #b9b9b9;
+  padding-top: 12px;
+  padding-left: 10px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.logout-icon:hover {
+  color: #ff0000; 
+}
+
+.Nav__profilePic{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;   
+  object-position: center;
+  border-radius: 60px;
+}
