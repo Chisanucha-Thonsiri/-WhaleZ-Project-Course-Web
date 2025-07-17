@@ -6,6 +6,7 @@ import Post from '../components/Post';
 import Menubar from '../components/Menubar';
 import { supabase } from '../utils/supabase'
 import LoadSpinner from '../components/LoadSpinner';
+import LearnerProfile from '../components/LearnerProfile';
 
 let id = 1;
 function Home() {
@@ -54,7 +55,7 @@ id += 1 ;
     {posts.map((post) => (<Post key={post.id} id = {post.id} title = {post.title} info = {post.info} date= {post.date} time = {post.time} 
     fname={post.userdata?.fname} lname={post.userdata?.lname} pfpic={post.userdata?.profilepic} role={post.userdata?.role} owner={post.userdata?.id} deletePost={deletePost}/>))}
     </div></div>
-    
+    <LearnerProfile user={user}/>
   </div>
       </div>
       {isLoading && <LoadSpinner/>}

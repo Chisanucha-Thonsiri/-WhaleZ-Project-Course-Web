@@ -8,6 +8,7 @@ import { supabase } from '../utils/supabase'
 import Roletag from '../components/Roletag';
 import Message from '../components/Message'
 import LoadSpinner from '../components/LoadSpinner';
+import LearnerProfile from '../components/LearnerProfile';
 
 let id = 1;
 function Chat() {
@@ -61,8 +62,9 @@ id += 1 ;
   
 
     </div><ChatInput addMessage={addMessage} /></div>
-    
+      <LearnerProfile user = {user}/>
   </div>
+
       </div>
     {isLoading &&(
          <LoadSpinner/>

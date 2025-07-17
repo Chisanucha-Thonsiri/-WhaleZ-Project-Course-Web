@@ -1,0 +1,57 @@
+.learner-profile-container{
+  border-radius: 10px;
+  width:300px;
+  margin:10px 0 0 0 ;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #e8fffe;  
+  box-shadow: 0px 0px 3px#778a8e;
+  position: sticky;
+  top: 80px;
+}
+
+.learner-profile-title{
+  font-size: larger;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+}
+.learner-profile-pfp{
+   justify-content: center;
+  display: flex;
+}
+
+.learner-profile-pfp img{
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.learner-profile-info{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.learner-profile-name{
+  font-weight: 500;
+}
+
+.learner-profile-role{
+  display: flex;
+  justify-content: center;
+}
+
+.learner-profile-withdraw-button{
+  background-color: crimson;
+  color: #e8fffe;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 20px;
+}
