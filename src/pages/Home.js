@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import '../css/Home.css';
 import Navbar from '../components/Navbar';
-import Input from '../components/Input';
+import CreatePost from '../components/CreatePost';
 import Post from '../components/Post';
 import Menubar from '../components/Menubar';
 import { supabase } from '../utils/supabase'
@@ -51,7 +51,7 @@ id += 1 ;
     <Menubar page='post' />
     <div className="vertical-container">
       <div className="vertical-scroll">
-    <Input addPost={addPost} />
+    <CreatePost addPost={addPost} />
     {posts.map((post) => (<Post key={post.id} id = {post.id} title = {post.title} info = {post.info} date= {post.date} time = {post.time} 
     fname={post.userdata?.fname} lname={post.userdata?.lname} pfpic={post.userdata?.profilepic} role={post.userdata?.role} owner={post.userdata?.id} deletePost={deletePost}/>))}
     </div></div>

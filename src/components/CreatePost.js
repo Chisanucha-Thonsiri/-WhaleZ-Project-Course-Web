@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import PropTypes, { element } from 'prop-types';
 import getDate from '../utils/getDate';
-import '../css/component-css/Input.css'
+import '../css/component-css/CreatePost.css'
 
-function Input({addPost}){
+function CreatePost({addPost}){
 const [Input, setInput] = useState('');
 const [InputINF, setInputINF] = useState('');
 
@@ -52,8 +52,8 @@ placeholder='ข้อมูล'/>
 );
 }
 
-Input.propTypes = {
+CreatePost.propTypes = {
     addPost : PropTypes.func.isRequired
 };
 
-export default Input;
+export default CreatePost;
