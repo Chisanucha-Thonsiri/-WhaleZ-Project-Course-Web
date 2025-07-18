@@ -6,6 +6,7 @@ import '../css/component-css/CreatePost.css'
 function CreatePost({addPost}){
 const [Input, setInput] = useState('');
 const [InputINF, setInputINF] = useState('');
+const [IsButton, setIsButton] = useState(true);
 
 function onChange(event){
 setInput(event.target.value);
@@ -27,29 +28,63 @@ function onClick(){
         setInputINF('');
     }
 }
+
+function createPostOnClick(){
+    setIsButton(false);
+}
+
+function cancelPostButtonOnClick(){
+    setInput('');
+    setInputINF('');
+    setIsButton(true);
+}
 return (
-    <div className='Input'>
-<div className='Input__header'> <i class="fa-solid fa-pen-to-square" style={{color: '#000000'}}></i> สร้างโพสต์</div>
-<div className='horizontal-header'>
-<div className='Title__header'>หัวเรื่อง: </div>
-<input
-className='Input__field'
-type = 'text'
-value = {Input}
-onChange={onChange}
-placeholder='ใส่หัวเรื่อง'/>
-</div>
-<textarea 
-className='Input__fieldINF'
-type = 'text'
-value = {InputINF}
-onChange={onChangeINF}
-placeholder='ข้อมูล'/>
-<div className='Input__buttonField'>
-<button className='Input__button' onClick={onClick}>POST</button>
-</div>
-</div>
+  <>
+    {IsButton && (
+      <div className="create-post">
+        <div className="create-post-button" onClick={createPostOnClick}>
+          <i className="fa-solid fa-pen-to-square"></i> สร้างโพสต์
+        </div>
+      </div>
+    )}
+
+    {!IsButton && (
+      <div className="Input">
+        <div className="Input__header">
+          <i className="fa-solid fa-pen-to-square" style={{ color: '#000000' }}></i> สร้างโพสต์
+        </div>
+
+        <div className="horizontal-header">
+          <div className="Title__header">หัวเรื่อง:</div>
+          <input
+            className="Input__field"
+            type="text"
+            value={Input}
+            onChange={onChange}
+            placeholder="ใส่หัวเรื่อง"
+          />
+        </div>
+
+        <textarea
+          className="Input__fieldINF"
+          value={InputINF}
+          onChange={onChangeINF}
+          placeholder="ข้อมูล"
+        />
+
+        <div className="Input__buttonField">
+            <div className="cancel-post-button" onClick={cancelPostButtonOnClick}>
+            ยกเลิก
+          </div>
+          <div className="post-button" onClick={onClick}>
+            <span>โพสต์</span> <i class="fa-solid fa-arrow-up"></i>
+          </div>
+        </div>
+      </div>
+    )}
+  </>
 );
+
 }
 
 CreatePost.propTypes = {

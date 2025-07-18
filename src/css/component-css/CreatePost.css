@@ -1,8 +1,12 @@
+.post-button, .cancel-post-button, .create-post-button:hover{
+cursor: pointer;
+}
 .Input{
   border: 1px solid hsl(216, 8% , 88%); 
   width:576px;
   margin:10px auto;
   background-color: #ffffff;
+  animation: fade 500ms;
 }
 
 .Input{
@@ -53,15 +57,52 @@ border:none;
 .Input__field:focus{
   outline: none;
 }
-.Input__button{
+.post-button{
+border: none;
+background-color: #4167b2;
+color: beige;
+padding: 2px 8px;
+border-radius: 10px;
+gap: 5px;
+}
+
+.cancel-post-button{
 border: none;
 border-radius: 4px;
-background-color: blue;
+background-color: rgb(135, 135, 135);
 color: beige;
+padding: 2px 5px;
+border-radius: 10px;
+gap: 5px;
 }
 
 .Input__buttonField{
   padding: 10px;
 display: flex;
+gap: 5px;
 justify-content: flex-end;
+}
+
+.create-post{
+  display:flex;
+  justify-content: flex-end;
+  min-width: 576px;
+
+}
+
+.create-post-button{
+  background-color: #4167b2;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 10px;
+
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  25% {opacity: 0.25;}
+  50% {opacity: 0.5;}
+  75% {opacity: 0.75;}
+  100% {opacity: 1;}
 }
