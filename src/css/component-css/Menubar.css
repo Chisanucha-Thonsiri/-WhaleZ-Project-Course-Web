@@ -1,7 +1,7 @@
 .Menubar{
   
   border-radius: 10px;
-  width:300px;
+  width:200px;
   margin:10px 0 0 0 ;
   padding: 5px;
   display: flex;
@@ -10,14 +10,59 @@
   background-color: #e8fffe;  
   box-shadow: 0px 0px 3px#778a8e;
   position: sticky;
-  top: 80px;
 }
+
+.Menubarmini{
+  
+  border-radius: 10px;
+  width:50px;
+  margin:10px 0 0 0 ;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #e8fffe;  
+  box-shadow: 0px 0px 3px#778a8e;
+  position: sticky;
+  justify-content: center;
+}
+
 
 .Menu{
   border-radius: 10px;
   color: white;
   padding: 10px 0 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   
+}
+
+.Menumini{
+  border-radius: 10px;
+  color: white;
+  padding: 10px 5px 10px 12px;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  
+}
+.Menu i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+  width: 1em;
+  font-size: 1.2em;
+}
+
+.Menumini i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+  width: 1em;
+  font-size: 1.2em;
 }
 
 .Selected{
