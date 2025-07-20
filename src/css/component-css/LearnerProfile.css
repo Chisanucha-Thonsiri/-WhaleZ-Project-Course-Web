@@ -81,8 +81,8 @@
 
 
 .course-info-open-button:hover{
-  background-color: #838383;
-  color: #ffffff;
+  background-color: rgb(18, 0, 156);
+  box-shadow: 0px 0px 10px rgb(135, 119, 255);
 }
 
 .course-info-open-button{
@@ -97,8 +97,8 @@
 
 
 .learner-profile-open-button:hover{
-  background-color: #838383;
-  color: #ffffff;
+  background-color: rgb(18, 0, 156);
+  box-shadow: 0px 0px 10px rgb(135, 119, 255);
 }
 
 .learner-profile-close-button{
