@@ -1,0 +1,31 @@
+.create-post-success-notification{
+  display: flex;
+  justify-content: center;
+}
+
+.create-post-success-notification-bubble{
+  background-color: #ffffff;
+  padding: 10px;
+  display: none;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  position: fixed;
+  justify-items: center;
+  top: -100px;
+  box-shadow: 0px 0px 3px#778a8e;
+  transition: all 0.2s ease-in-out;
+}
+
+.create-post-success-notification-bubble-display{
+  background-color: #ffffff;
+  padding: 10px;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  position: fixed;
+  justify-items: center;
+  top: 30px;
+  box-shadow: 0px 0px 3px#778a8e;
+  transform: scale(1);
+}
